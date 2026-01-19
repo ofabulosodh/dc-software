@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const funcionalCards = document.querySelectorAll(".aura-funcionalidades .card");
   const pqCards = document.querySelectorAll(".pq-card");
 
-  const AURA_API_URL = "http://localhost:3000/aura";
+  const AURA_API_URL = "https://dc-software-backend.onrender.com/aura";
+
   const WHATSAPP_LINK = "https://wa.me/5532991563769";
   const WHATSAPP_HTML = `<a href="${WHATSAPP_LINK}" target="_blank" rel="noopener noreferrer">WhatsApp</a>`;
 
