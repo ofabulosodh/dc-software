@@ -1,0 +1,139 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>DC Software</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!--HEADER-->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/img/logo.png" alt="DC Software"> 
+            </a>
+           
+        </div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="solucoes.html">Soluções</a>
+            <a href="ia.html">IA</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <button class="btn-aura">Falar com a Aura</button>
+
+    </header>
+
+ <!-- HERO IA -->
+    <section class="hero-ia">
+        <div class="hero-content">
+            <div class="avatar-aura"></div> <!-- Avatar em CSS -->
+            <div class="hero-text">
+                <h1>Inteligência Artificial que trabalha para você</h1>
+                <p>Atendentes virtuais, automações inteligentes e soluções personalizadas com a Aura, nossa IA proprietária.</p>
+                <button class="btn-aura">Conversar com a Aura</button>
+            </div>
+        </div>
+    </section>
+
+   <section class="aura-funcionalidades">
+    <h2>O que a Aura faz</h2>
+    <div class="cards-container">
+        <div class="card" data-solucao="atendimento">🤖 Atendimento automático 24h</div>
+        <div class="card" data-solucao="agendamento">📅 Agendamentos inteligentes</div>
+        <div class="card" data-solucao="integracao">💬 Integração com WhatsApp, site e sistemas</div>
+        <div class="card" data-solucao="relatorios">📊 Relatórios e histórico de conversas</div>
+        <div class="card" data-solucao="personalizacao">🧠 Personalização por negócio</div>
+    </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="para-quem">
+    <h2>Para quem é a Aura</h2>
+    <p>A Aura se adapta ao seu negócio. Não o contrário.</p>
+
+    <div class="para-quem-cards">
+        <div class="pq-card">Clínicas</div>
+        <div class="pq-card">Empresas</div>
+        <div class="pq-card">Lojas</div>
+        <div class="pq-card">Profissionais liberais</div>
+        <div class="pq-card">Startups</div>
+    </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como-funciona">
+    <h2>Como funciona a Aura</h2>
+    <p>A Aura atende, organiza, filtra e só chama o humano quando realmente precisa.</p>
+
+    <div class="fluxo">
+        <div class="fluxo-item">
+            <span>Cliente</span>
+            <div class="arrow">→</div>
+        </div>
+        <div class="fluxo-item">
+            <span>Aura</span>
+            <div class="arrow">→</div>
+        </div>
+        <div class="fluxo-item">
+            <span>Sistema / Humano</span>
+        </div>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-ia">
+    <h2>Quer ver a Aura funcionando na prática?</h2>
+    <button class="btn-aura btn-cta">Abrir chat com a Aura</button>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--FOOter-->
+    <footer class="footer">
+        <p>© DC Software tecnologia que conecta o futuro</p>
+    </footer>
+<!-- AURA FLUTUANTE -->
+<div class="aura-widget">💬</div>
+
+<!-- CHAT AURA -->
+<div id="auraChat" class="aura-chat">
+
+  <div class="aura-header">
+    <span>Aura • DC Software</span>
+    <button id="closeAura">✖</button>
+  </div>
+
+  <div id="auraMessages" class="aura-messages"></div>
+  
+  <div class="aura-status" id="auraStatus">Aura está digitando...</div>
+
+  <div class="aura-input">
+    <input type="text" id="auraInput" placeholder="Digite sua mensagem..." />
+    <button id="sendAura">➤</button>
+  </div>
+
+</div>
+<script src="assets/js/script.js"></script>
+</body>
+
+</html>
