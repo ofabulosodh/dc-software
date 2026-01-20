@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const AURA_API_URL = "https://dc-software-backend.onrender.com/aura";
 
   const WHATSAPP_LINK = "https://wa.me/5532991563769";
+  const WHATSAPP_URL = "https://wa.me/5532991563769"; 
+
   const WHATSAPP_HTML = `<a href="${WHATSAPP_LINK}" target="_blank" rel="noopener noreferrer">WhatsApp</a>`;
 
   let conversation = [
@@ -203,8 +205,12 @@ document.addEventListener("DOMContentLoaded", () => {
       auraState.aiQuestions++;
       auraReply(data.reply);
     } catch (err) {
-      auraReply("⚠️ Estou com instabilidade agora. Posso te atender direto no WhatsApp 😊: ${WHATSAPP_HTML}");
-      console.error(err);
+      auraReply("⚠️ Estou com instabilidade agora. Posso te atender direto no WhatsApp 😊");
+
+auraReply(
+  `⚠️ Estou com instabilidade agora. Posso te atender direto no WhatsApp 😊\n${WHATSAPP_URL}`
+);
+
     } finally {
       isSending = false;
     }
