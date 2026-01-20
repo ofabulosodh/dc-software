@@ -47,6 +47,53 @@ document.addEventListener("DOMContentLoaded", () => {
     aiQuestions: 0,
   };
 
+  const hamburger = document.querySelector(".hamburger");
+  const overlay = document.querySelector(".menu-overlay");
+  const drawer = document.querySelector(".mobile-drawer");
+
+  if (!hamburger || !overlay || !drawer) return;
+
+  const openMenu = () => {
+    overlay.hidden = false;
+    drawer.hidden = false;
+
+    // força reflow pra transição funcionar mesmo saindo de hidden
+    drawer.offsetHeight;
+
+    drawer.classList.add("open");
+    hamburger.setAttribute("aria-expanded", "true");
+    drawer.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeMenu = () => {
+    drawer.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
+    drawer.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+
+    // espera a animação acabar antes de esconder
+    setTimeout(() => {
+      overlay.hidden = true;
+      drawer.hidden = true;
+    }, 220);
+  };
+
+  hamburger.addEventListener("click", openMenu);
+  overlay.addEventListener("click", closeMenu);
+
+  // fecha no ESC
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !overlay.hidden) closeMenu();
+  });
+
+  // fecha quando clicar em qualquer link do menu
+  drawer.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (a) closeMenu();
+  });
+
   const keywordsResponses = {
     ia: "🤖 Inteligência Artificial é nosso foco em soluções inteligentes. Posso te explicar aplicações e valores.",
     automacao: "⚙️ Automação ajuda a economizar tempo e reduzir custos. Quer um exemplo real?",
@@ -189,14 +236,11 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       if (auraState.aiQuestions >= 2) {
         auraState.mode = "offer_contact";
-        auraReply("😊 Para continuarmos e entender melhor seu caso, posso te atender direto no WhatsApp.");
-
-auraReply(
-  `<a href="${WHATSAPP_URL}" target="_blank" rel="noopener noreferrer">👉 Falar no WhatsApp agora</a>`,
-  true
+       auraReply(
+  `😊 Para continuarmos e entender melhor seu caso, posso te atender direto no WhatsApp:\n${WHATSAPP_URL}`
 );
-
 return;
+
 
 
 
