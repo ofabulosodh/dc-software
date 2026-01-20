@@ -191,10 +191,12 @@ document.addEventListener("DOMContentLoaded", () => {
         auraState.mode = "offer_contact";
         auraReply(
   `😊 Para continuarmos e entender melhor seu caso, posso te atender direto no WhatsApp.
-   <a href="${WHATSAPP_URL}" target="_blank" rel="noopener noreferrer">👉 Falar no WhatsApp agora</a>`,
-  true
+   <a href="${WHATSAPP_URL}" target="_blank" rel="noopener noreferrer">
+     👉 Falar no WhatsApp agora
+   </a>`
 );
 return;
+
 
       }
 
