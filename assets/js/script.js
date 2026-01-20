@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       if (auraState.aiQuestions >= 2) {
         auraState.mode = "offer_contact";
-        auraReply("😊 Para continuarmos e entender melhor seu caso, posso te atender direto no WhatsApp.${WHATSAPP_HTML}");
+        auraReply('😊 Para continuarmos e entender melhor seu caso, posso te atender direto no WhatsApp.${WHATSAPP_URL}');
         return;
       }
 
