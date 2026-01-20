@@ -9,12 +9,24 @@ const contatoRoutes = require('./routes/contato.routes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middlewares
+const allowed = (process.env.FRONTEND_ORIGIN || "")
+  .split(",")
+  .map(s => s.trim())
+  .filter(Boolean);
+
 app.use(cors({
-  origin: process.env.FRONTEND_ORIGIN,
-  methods: ['GET', 'POST'],
+  origin: (origin, cb) => {
+    // permite requests sem origin (curl/postman)
+    if (!origin) return cb(null, true);
+    if (allowed.includes(origin)) return cb(null, true);
+    return cb(new Error("CORS blocked: " + origin));
+  },
+  methods: ["GET", "POST"],
 }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
 
 // Rotas
 app.use('/aura', auraRoutes);
@@ -34,5 +46,6 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor Aura rodando na porta ${PORT}`);
 });
+
 
 
