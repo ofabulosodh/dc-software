@@ -1156,3 +1156,26 @@ body {background: #0b0b0f;
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-visual,
+  .aura-orb {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 18px;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+
+  .cards .card {
+    width: min(92vw, 360px);
+    margin: 0 auto;
+  }
+}
