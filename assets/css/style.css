@@ -1032,3 +1032,11 @@ body {background: #0b0b0f;
 .contact-link.phone{
   white-space: nowrap; /* telefone nunca quebra */
 }
+
+@media (max-width: 768px) {
+  .btn-aura-topo { /* troca pelo seletor real */
+    right: 12px !important;
+    top: 84px !important; /* opcional */
+    max-width: calc(100vw - 24px);
+  }
+}
