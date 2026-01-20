@@ -79,7 +79,7 @@ body {background: #0b0b0f;
 
 /* HERO */
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   background: radial-gradient(circle at top, #11172b, #05070f);
@@ -1229,3 +1229,12 @@ body {background: #0b0b0f;
     text-align: center;
   }
 }
+
+@media (max-width: 1200px) {
+  .hero { min-height: 80vh; }
+}
+
+@media (max-width: 992px) {
+  .hero { min-height: auto; padding-top: 40px; padding-bottom: 40px; }
+}
+
