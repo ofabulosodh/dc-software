@@ -205,8 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
       auraState.aiQuestions++;
       auraReply(data.reply);
     } catch (err) {
-      auraReply("⚠️ Estou com instabilidade agora. Posso te atender direto no WhatsApp 😊");
-
+      
 auraReply(
   `⚠️ Estou com instabilidade agora. Posso te atender direto no WhatsApp 😊\n${WHATSAPP_URL}`
 );
