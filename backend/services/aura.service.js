@@ -30,7 +30,13 @@ exports.processMessages = async (messages = []) => {
       `Não consegui responder agora. Se preferir, fale comigo no WhatsApp: ${WHATSAPP_LINK}`
     );
   } catch (err) {
-    // se der qualquer erro aqui, devolve fallback pro WhatsApp
-    return `Tive um problema técnico agora. Se preferir, fale comigo no WhatsApp: ${WHATSAPP_LINK}`;
-  }
+  console.error("OpenAI error:", {
+    message: err?.message,
+    status: err?.status || err?.response?.status,
+    data: err?.response?.data,
+  });
+
+  return `Tive um problema técnico agora. Se preferir, fale comigo no WhatsApp: ${WHATSAPP_LINK}`;
+}
+
 };
