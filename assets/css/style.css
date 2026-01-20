@@ -1169,13 +1169,63 @@ body {background: #0b0b0f;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 18px;
-    padding: 0 16px;
+    gap: 16px;
+    padding: 0 18px;    /* mais respiro pra não “colar” */
     margin: 0 auto;
   }
 
   .cards .card {
-    width: min(92vw, 360px);
+    width: min(84vw, 340px);  /* menor que antes */
+    border-radius: 18px;      /* opcional: mais “card” */
+    padding: 18px;            /* opcional: deixa mais compacto */
+    box-sizing: border-box;
+  }
+
+  /* Título da seção "O que fazemos" mais alinhado */
+  .services-title, .section-title, h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 32px 0; /* dá respiro vertical */
+  }
+
+  .hero-container {
+    width: 100%;
+    max-width: 520px;
     margin: 0 auto;
+    padding: 0 18px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .hero-text {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-text h1 {
+    line-height: 1.05; /* melhora leitura mobile */
+  }
+
+  .hero-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: min(86vw, 320px);
+    text-align: center;
   }
 }
